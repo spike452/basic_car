@@ -4,7 +4,9 @@
  *  Created on: 2021年2月22日
  *      Author: Spike
  */
-
+#include "headfile.h"
+#include "ele.h"
+#pragma section all "cpu0_dsram"
 
 float message[7][5]={0};//存储电感值
 int fuhao1[7]={0};
