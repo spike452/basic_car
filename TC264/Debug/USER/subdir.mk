@@ -6,24 +6,28 @@
 C_SRCS += \
 ../USER/Cpu0_Main.c \
 ../USER/Cpu1_Main.c \
+../USER/PID.c \
 ../USER/ele.c \
 ../USER/isr.c 
 
 OBJS += \
 ./USER/Cpu0_Main.o \
 ./USER/Cpu1_Main.o \
+./USER/PID.o \
 ./USER/ele.o \
 ./USER/isr.o 
 
 COMPILED_SRCS += \
 ./USER/Cpu0_Main.src \
 ./USER/Cpu1_Main.src \
+./USER/PID.src \
 ./USER/ele.src \
 ./USER/isr.src 
 
 C_DEPS += \
 ./USER/Cpu0_Main.d \
 ./USER/Cpu1_Main.d \
+./USER/PID.d \
 ./USER/ele.d \
 ./USER/isr.d 
 

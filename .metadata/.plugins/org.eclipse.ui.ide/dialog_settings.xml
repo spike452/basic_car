@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Lenovo\Desktop\车车\seekfree-TC264_Library-master\TC264_Library\Example\4-Encoder_Demo"/>
+			<item value="C:\Users\Lenovo\Desktop\车车\seekfree-TC264_Library-master\TC264_Library\Example\6-Printf_Demo"/>
+			<item value="D:\git\basic_car\TC264"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="com.infineon.aurix.buildsystem.importexport.wizard.ui.ImportFromCodeExampleWizardPage">
+		<item key="SELECTED_REPOSITORY" value="3"/>
+	</section>
+</section>
