@@ -27,7 +27,8 @@ int core0_main(void)
 {
 	disableInterrupts();
 	get_clk();//获取时钟频率  务必保留
-	adc_init(ADC_0, ADC0_CH0_A0);//初始化ADC0 通道0 使用A0引脚
+	//adc_init(ADC_0, ADC0_CH0_A0);//初始化ADC0 通道0 使用A0引脚
+	EM_init();
     //用户在此处调用各种初始化函数等
 	gtm_pwm_init(ATOM0_CH4_P02_4, 50,    0);//ATOM 0模块的通道4 使用P02_4引脚输出PWM  PWM频率50HZ  占空比百分之0/GTM_ATOM0_PWM_DUTY_MAX*100  GTM_ATOM0_PWM_DUTY_MAX宏定义在zf_gtm_pwm.h
 	gtm_pwm_init(ATOM0_CH5_P02_5, 1000,  0);
@@ -50,10 +51,10 @@ int core0_main(void)
                 //A0接到GND时 结果应该在0附近
                 //A0接到VCC时 结果应该在4095附近
                 //悬空时 结果可能是任意数，没有任何意义，所以大家不要问悬空的时候为什么结果是这么多呢？
-                adc_result = adc_mean_filter(ADC_0, ADC0_CH0_A0, ADC_12BIT, 10);//采集10次求平均  分辨率12位
+               // adc_result = adc_mean_filter(ADC_0, ADC0_CH0_A0, ADC_12BIT, 10);//采集10次求平均  分辨率12位
                 //将结果通过串口打印，可以先学习printf例程，了解如何使用printf
-                printf("adc_result: %d\n", adc_result);
-                systick_delay_ms(STM0, 100);
+               // printf("adc_result: %d\n", adc_result);
+                //systick_delay_ms(STM0, 100);
     }
 }
 
