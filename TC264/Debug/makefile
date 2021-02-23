@@ -127,23 +127,23 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_SIZE += \
-TC264.siz \
+TC264_Spike.siz \
 
 
 # All Target
-all: TC264.elf secondary-outputs
+all: TC264_Spike.elf secondary-outputs
 
 # Tool invocations
-TC264.elf: $(OBJS)
+TC264_Spike.elf: $(OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: TASKING Linker'
-	cctc -lrt -lfp_fpu -lcs_fpu  -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="TC264.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --strict --anachronisms --force-c++ -Ctc26xb   -o"TC264.elf" -Wl-o"TC264.hex:IHEX" --lsl-core=vtc  --lsl-file=../Lcf_Tasking_Tricore_Tc.lsl $(OBJS)
+	cctc -lrt -lfp_fpu -lcs_fpu  -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="TC264_Spike.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --strict --anachronisms --force-c++ -Ctc26xb   -o"TC264_Spike.elf" -Wl-o"TC264_Spike.hex:IHEX" --lsl-core=vtc  --lsl-file=../Lcf_Tasking_Tricore_Tc.lsl $(OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-TC264.siz: TC264.elf
+TC264_Spike.siz: TC264_Spike.elf
 	@echo 'Invoking: Print Size'
-	elfsize  "TC264.elf"
+	elfsize  "TC264_Spike.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
