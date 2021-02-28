@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include USER_C/subdir.mk
 -include USER/subdir.mk
 -include Libraries/seekfree_peripheral/subdir.mk
 -include Libraries/seekfree_libraries/common/subdir.mk

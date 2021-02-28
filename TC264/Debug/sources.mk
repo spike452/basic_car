@@ -115,4 +115,5 @@ Libraries/seekfree_libraries/common \
 Libraries/seekfree_libraries \
 Libraries/seekfree_peripheral \
 USER \
+USER_C \
 

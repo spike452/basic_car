@@ -5,6 +5,7 @@
  *      Author: Spike
  */
 #include "PID.h"
+#include "ele.h"
 #include "headfile.h"
 #pragma section all "cpu0_dsram"
 
@@ -32,6 +33,9 @@
       int16 Fuzzy_Servo_Rule_2[7][7];
       int16 Fuzzy_Servo_Rule_3[7][7];
   }Speed;
+
+
+
 
  float encoder_l,encoder_r;  //滤波后编码器的读数
  float avert_speed=0.0;//左右轮平均速度
