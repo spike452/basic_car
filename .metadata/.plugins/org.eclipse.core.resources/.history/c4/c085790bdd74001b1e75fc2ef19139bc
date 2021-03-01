@@ -1,0 +1,27 @@
+/*
+ * PID.c
+ *
+ *  Created on: 2021年2月22日
+ *      Author: Spike
+ */
+
+void Motor_init(void)
+{
+//    uart_init(USART_1,115200,UART1_TX_B6,UART1_RX_B7);    //串口初始用来看脉冲
+
+
+    gpt12_init(GPT12_T2, GPT12_T2INB_P33_7, GPT12_T2EUDB_P33_6); //编码器初始化
+    gpt12_init(GPT12_T2, GPT12_T4INA_P02_8, GPT12_T4EUDA_P00_9);
+
+            pwm_init(PWM2_MODULE3_CHA_C28, 50, 3570); //舵机初始化
+
+        //电机初始化
+        pwm_init(PWM2_MODULE0_CHB_D7, 17000, 0);
+        pwm_init(PWM2_MODULE0_CHA_D6, 17000, 0);
+        pwm_init(PWM2_MODULE1_CHB_D5, 17000, 0);
+        pwm_init(PWM2_MODULE1_CHA_D4, 17000, 0);
+
+}
+
+
+
