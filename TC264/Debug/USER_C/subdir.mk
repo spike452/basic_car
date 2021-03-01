@@ -4,24 +4,28 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../USER_C/Kalman_Filter.c \
 ../USER_C/PID.c \
 ../USER_C/ele.c \
-../USER_C/motor.c 
+../USER_C/kalman.c 
 
 OBJS += \
+./USER_C/Kalman_Filter.o \
 ./USER_C/PID.o \
 ./USER_C/ele.o \
-./USER_C/motor.o 
+./USER_C/kalman.o 
 
 COMPILED_SRCS += \
+./USER_C/Kalman_Filter.src \
 ./USER_C/PID.src \
 ./USER_C/ele.src \
-./USER_C/motor.src 
+./USER_C/kalman.src 
 
 C_DEPS += \
+./USER_C/Kalman_Filter.d \
 ./USER_C/PID.d \
 ./USER_C/ele.d \
-./USER_C/motor.d 
+./USER_C/kalman.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

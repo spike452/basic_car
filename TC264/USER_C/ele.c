@@ -6,7 +6,7 @@
  */
 #include "headfile.h"
 #include "ele.h"
-#pragma section all "cpu0_dsram"
+#include "Kalman_Filter.h"
 
 
 typedef struct {
@@ -81,7 +81,7 @@ float EM_podao_angle;  //坡道俯仰角
 uint8 EM_circle_direction=0;//进环方向，1为左，2为右，否则为0
 uint8 EM_circle_data;//获取拨码的路况，包含方向和大小
 /*****************************************/
-
+kalman_typedef kalman[5];
 //////////////////////////////////////////////////////////////////////////////////////////
 float ELE_L_MAX=0.926;//左边水平   ####100/108
 float ELE_M_MAX=0.667;//中间
@@ -149,17 +149,26 @@ void EM_init(void) //
     ELE_num[3]=ELE_Value[4]*ELE_HR_MAX;
 
     //存储之前的电感值
-    for(j=0;j<5;j++)
-    {
-        for(i=0;i<2;i++)
-         {ELE_PREVIOUS[j][i]=ELE_PREVIOUS[j][i+1];}
-
-        ELE_PREVIOUS[j][2]=ELE_num[j];
-    }
+  //  for(j=0;j<5;j++)
+    //{
+    //    for(i=0;i<2;i++)
+    //   {ELE_PREVIOUS[j][i]=ELE_PREVIOUS[j][i+1];}
+    //   ELE_PREVIOUS[j][2]=ELE_num[j];
+   // }
 
     //加权滤波
+   // for(j=0;j<5;j++)
+    //{ELE_compensate[j]=0.1*ELE_PREVIOUS[j][0]+0.1*ELE_PREVIOUS[j][1]+0.8*ELE_PREVIOUS[j][2];}
+
+    //kalman滤波
     for(j=0;j<5;j++)
-    {ELE_compensate[j]=0.1*ELE_PREVIOUS[j][0]+0.1*ELE_PREVIOUS[j][1]+0.8*ELE_PREVIOUS[j][2];}
+    {
+       kalman_init(&kalman[j]);
+    }
+    for(j=0;j<5;j++)
+    {
+       ELE_compensate[j]=kalman_calc(&kalman[j],ELE_num[j]);
+    }
 
     ELE_Store();  //存储电感值并计算电感值的变化正反性
 }

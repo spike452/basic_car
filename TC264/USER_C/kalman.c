@@ -1,5 +1,6 @@
+//暂时没用
+
 #include "kalman.h"
-#include "mpu6050.h"
 #include "math.h"
 
 float Accel_x;	     //X轴加速度值暂存
@@ -24,12 +25,12 @@ void Angle_Calcu(void)
 	//deg = rad*180/3.14
 	float x,y,z;
 	
-	Accel_x = GetData(ACCEL_XOUT_H); //x轴加速度值暂存
-	Accel_y = GetData(ACCEL_YOUT_H); //y轴加速度值暂存
-	Accel_z = GetData(ACCEL_ZOUT_H); //z轴加速度值暂存
-	Gyro_x  = GetData(GYRO_XOUT_H);  //x轴陀螺仪值暂存
-	Gyro_y  = GetData(GYRO_YOUT_H);  //y轴陀螺仪值暂存
-	Gyro_z  = GetData(GYRO_ZOUT_H);  //z轴陀螺仪值暂存
+	//Accel_x = GetData(ACCEL_XOUT_H); //x轴加速度值暂存
+	//Accel_y = GetData(ACCEL_YOUT_H); //y轴加速度值暂存
+	//Accel_z = GetData(ACCEL_ZOUT_H); //z轴加速度值暂存
+    //Gyro_x  = GetData(GYRO_XOUT_H);  //x轴陀螺仪值暂存
+	//Gyro_y  = GetData(GYRO_YOUT_H);  //y轴陀螺仪值暂存
+	//Gyro_z  = GetData(GYRO_ZOUT_H);  //z轴陀螺仪值暂存
 	
 	//处理x轴加速度
 	if(Accel_x<32764) x=Accel_x/16384;
